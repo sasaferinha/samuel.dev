@@ -154,7 +154,6 @@ export default function Home() {
       <section className="projects section" id="trabalhos" aria-labelledby="projects-title">
         <div className="section-heading">
           <div><p className="section-label">Projetos selecionados</p><h2 id="projects-title">Ideias que ganharam<br /><em>presença.</em></h2></div>
-          <p>Uma amostra de experiências pensadas para negócios que querem se destacar.</p>
         </div>
         <div className="project-grid">
           {projects.map((project, index) => (

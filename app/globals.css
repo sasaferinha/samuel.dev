@@ -39,6 +39,8 @@ nav a { opacity:.7; transition:.25s; } nav a:hover { opacity:1; }
 .stats div:first-child { padding-left:0; }.stats div:last-child { border:0; }
 .stats strong { font-family:var(--font-serif); font-size:2.2rem; font-weight:400; }.stats span { font-size:.72rem; color:#6d6962; }
 .projects { background:#131312; color:var(--paper); }
+.projects .section-heading { justify-content:center; align-items:center; text-align:center; }
+.projects .section-heading>div { width:100%; }
 .section-heading { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:5rem; }
 .section-heading .section-label { color:#88857e; margin-bottom:1.5rem; }
 .section-heading>p { max-width:320px; color:#96938c; line-height:1.6; font-size:.9rem; }
