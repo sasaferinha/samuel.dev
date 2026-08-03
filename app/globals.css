@@ -137,3 +137,21 @@ footer { background:var(--ink); color:var(--paper); border-top:1px solid #262625
 @media (max-width:800px){.hero h1{font-size:clamp(2.25rem,10vw,3.4rem);line-height:.92}.intro-word{font-size:clamp(3.4rem,18.7vw,5.95rem)}.intro h2,.section-heading h2,.process h2{font-size:clamp(1.75rem,8vw,2.5rem)}.contact h2{font-size:clamp(2.1rem,10vw,3.2rem)}.hero-ghost{top:28%;font-size:11vw}.hero-content{padding-left:0;z-index:3}.hero-bottom>p{font-size:.76rem}}
 @media (max-width:800px){.service-list summary{grid-template-columns:45px 1fr 40px;gap:1rem}.service-list summary h3{font-size:1.22rem}.service-detail{grid-template-columns:1fr;padding:0 1rem 1.8rem 45px;gap:1rem}}
 @media (prefers-reduced-motion:reduce){.intro-screen{animation-duration:.6s}.intro-word span{opacity:1;filter:none;transform:none;animation:none}.hero-content,.site-header,.hero-index{animation:none}.hero-lines,.hero-lines i,.circle-link,.mock-window,.project-arrow,.service-list i,.contact-orbit,.contact-orbit i,.process,.project-visual::after{animation:none!important}}
+
+/* Unified monochrome palette */
+:root { --ink:#171719; --paper:#f1f1f1; --warm:#b5b5b3; --line:rgba(23,23,25,.18); --accent:#b5b5b3; }
+body,.services,.intro { background:#f1f1f1; color:#171719; }
+.hero,.intro-screen,.projects,.contact,footer { background-color:#171719; }
+.hero { background:radial-gradient(circle at 72% 42%,#4c4c4b 0,#242426 23%,#171719 58%,#111113 100%); }
+.hero h1,.hero h1 em,.contact,.projects,footer { color:#f1f1f1; }
+.hero-bottom>p,.eyebrow,.section-heading>p,.project-card>p,.contact>p:not(.eyebrow),footer { color:#b5b5b3; }
+.hero-ghost { color:#4c4c4b; }.hero-lines i { border-color:#b5b5b3; }
+.motion-ticker { background:#b5b5b3; color:#171719; }
+.process { color:#171719; background-color:#b5b5b3; background-image:radial-gradient(circle at 20% 20%,#f1f1f1 0,transparent 30%),radial-gradient(circle at 80% 80%,#8d8d8b 0,transparent 36%); }
+.process .section-label,.process li p,.process h2 em { color:#4c4c4b; }
+.project-coral .project-visual { background:#b5b5b3; }.project-sand .project-visual { background:#777776; }.project-blue .project-visual { background:#4c4c4b; }
+.mock-window { background:#f1f1f1; }.project-blue .mock-window { background:#b5b5b3; }
+.service-list details:hover,.service-list details[open] { background:#171719; color:#f1f1f1; }
+.service-list details[open] summary i { background:#b5b5b3; color:#171719; border-color:#b5b5b3; }
+.contact>a { background:#f1f1f1; color:#171719; }.contact>a:hover { box-shadow:0 16px 50px rgba(181,181,179,.22); }
+.brand-mark { background:#f1f1f1; color:#171719; }
