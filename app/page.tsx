@@ -139,8 +139,7 @@ export default function Home() {
 
       <section className="services section" id="servicos" aria-labelledby="services-title">
         <div className="section-heading services-heading">
-          <div><p className="section-label">O que eu faço</p><h2 id="services-title">Do primeiro rascunho<br />ao primeiro <em>clique.</em></h2></div>
-          <p>Cuido de cada detalhe para entregar um site bonito, estratégico, rápido e fácil de usar.</p>
+          <h2 id="services-title">Serviços</h2>
         </div>
         <div className="service-list">
           {services.map((service) => (
