@@ -40,7 +40,7 @@ export default function Home() {
     const timer = window.setTimeout(() => {
       setShowIntro(false);
       document.body.classList.remove("intro-running");
-    }, reducedMotion ? 600 : 4000);
+    }, reducedMotion ? 600 : 5400);
     return () => {
       window.clearTimeout(timer);
       document.body.classList.remove("intro-running");
