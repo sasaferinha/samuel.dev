@@ -55,6 +55,37 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const root = document.documentElement;
+    const scenes = document.querySelectorAll<HTMLElement>(".hero, .section, .contact");
+    let frame = 0;
+    const updateScrollMotion = () => {
+      frame = 0;
+      const pageRange = document.documentElement.scrollHeight - window.innerHeight;
+      root.style.setProperty("--page-progress", `${pageRange > 0 ? window.scrollY / pageRange : 0}`);
+      scenes.forEach((scene) => {
+        const rect = scene.getBoundingClientRect();
+        const distance = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
+        const clamped = Math.max(-1.4, Math.min(1.4, distance));
+        scene.style.setProperty("--parallax-slow", `${clamped * -30}px`);
+        scene.style.setProperty("--parallax-text", `${clamped * -14}px`);
+        scene.style.setProperty("--parallax-fast", `${clamped * -48}px`);
+      });
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateScrollMotion);
+    };
+    updateScrollMotion();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  useEffect(() => {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => entry.target.classList.toggle("is-visible", entry.isIntersecting));
     }, { threshold: 0.12 });
@@ -65,6 +96,7 @@ export default function Home() {
 
   return (
     <main>
+      <div className="scroll-progress" aria-hidden="true" />
       {showIntro && (
         <div className="intro-screen" role="status" aria-label="Apresentando samuel.dev">
           <div className="intro-word" aria-hidden="true">
