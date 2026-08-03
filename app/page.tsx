@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const services = [
   {
@@ -33,7 +33,6 @@ const projects = [
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
-  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.classList.add("intro-running");
@@ -49,22 +48,16 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const cursor = cursorRef.current;
-    const moveCursor = (event: MouseEvent) => {
-      if (cursor) cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
-    };
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => entry.target.classList.toggle("is-visible", entry.isIntersecting));
     }, { threshold: 0.12 });
     const revealItems = document.querySelectorAll(".section-heading, .intro>*, .project-card, .service-list details, .process li, .contact>*");
     revealItems.forEach((item) => { item.classList.add("reveal"); revealObserver.observe(item); });
-    window.addEventListener("mousemove", moveCursor, { passive: true });
-    return () => { window.removeEventListener("mousemove", moveCursor); revealObserver.disconnect(); };
+    return () => { revealObserver.disconnect(); };
   }, []);
 
   return (
     <main>
-      <div className="custom-cursor" ref={cursorRef} aria-hidden="true"><span>ver</span></div>
       {showIntro && (
         <div className="intro-screen" role="status" aria-label="Apresentando samuel.dev">
           <div className="intro-word" aria-hidden="true">
@@ -91,9 +84,6 @@ export default function Home() {
           {Array.from({ length: 16 }).map((_, index) => <i key={index} />)}
         </div>
 
-        <div className="hero-sculpture" aria-hidden="true">
-          <i /><i /><i />
-        </div>
         <div className="hero-ghost" aria-hidden="true">DESIGN / DEVELOPMENT</div>
 
         <div className="hero-content">
