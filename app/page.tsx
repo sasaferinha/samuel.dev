@@ -130,8 +130,8 @@ export default function Home() {
         <div className="hero-content">
           <p className="eyebrow"><span /> Design & desenvolvimento web</p>
           <h1 className="hero-statement">
-            <span>Sites <i>/</i></span>
-            <span>que movem <i>/</i></span>
+            <span>Sites</span>
+            <span>que movem</span>
             <span><em>negócios.</em></span>
           </h1>
           <div className="hero-bottom">

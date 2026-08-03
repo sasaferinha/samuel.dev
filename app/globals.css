@@ -243,10 +243,8 @@ nav a:not(.nav-cta):hover::after { transform:scaleX(1); transform-origin:left; }
 /* Cinematic editorial hero inspired by the reference rhythm */
 .hero::before { content:""; position:absolute; z-index:0; top:-34%; right:-7%; width:58vw; height:115vh; pointer-events:none; background:linear-gradient(112deg,transparent 24%,rgba(241,241,241,.035) 45%,rgba(241,241,241,.18) 51%,rgba(181,181,179,.035) 60%,transparent 76%); filter:blur(12px); transform:rotate(8deg); transform-origin:top center; animation:spotlight-sway 9s ease-in-out infinite alternate; }
 .hero::after { content:""; position:absolute; z-index:0; left:-12%; right:-12%; bottom:-22%; height:52%; pointer-events:none; background:repeating-radial-gradient(ellipse at 50% 100%,transparent 0 17px,rgba(181,181,179,.105) 18px 19px,transparent 20px 31px); transform:perspective(600px) rotateX(64deg) scaleX(1.35); opacity:.55; mask-image:linear-gradient(to top,#000,transparent 80%); animation:surface-breathe 8s ease-in-out infinite alternate; }
-.hero-statement { display:flex; flex-direction:column; width:max-content; }
-.hero-statement>span { display:block; white-space:nowrap; }
-.hero-statement>span:nth-child(2) { margin-left:clamp(1rem,4vw,4.5rem); }
-.hero-statement>span:nth-child(3) { margin-left:clamp(2rem,8vw,9rem); }
+.hero-statement { display:flex; flex-direction:column; width:max-content; gap:.08em; align-items:flex-start; line-height:.96!important; }
+.hero-statement>span { display:block; white-space:nowrap; margin-left:0!important; }
 .hero-statement i { color:#777776; font-style:normal; font-weight:300; display:inline-block; animation:slash-pulse 3.2s ease-in-out infinite; }
 .hero-statement>span:nth-child(2) i { animation-delay:.45s; }
 .hero .eyebrow { padding-left:.2rem; }
@@ -259,8 +257,6 @@ nav a:not(.nav-cta):hover::after { transform:scaleX(1); transform-origin:left; }
 
 @media (max-width:800px) {
   .hero-statement { width:100%; }
-  .hero-statement>span:nth-child(2) { margin-left:.65rem; }
-  .hero-statement>span:nth-child(3) { margin-left:1.3rem; }
   .hero::before { width:105vw; right:-38%; }
   .hero::after { bottom:-12%; height:40%; }
   .hero-index::after { display:none; }
