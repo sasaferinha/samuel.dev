@@ -155,3 +155,38 @@ body,.services,.intro { background:#f1f1f1; color:#171719; }
 .service-list details[open] summary i { background:#b5b5b3; color:#171719; border-color:#b5b5b3; }
 .contact>a { background:#f1f1f1; color:#171719; }.contact>a:hover { box-shadow:0 16px 50px rgba(181,181,179,.22); }
 .brand-mark { background:#f1f1f1; color:#171719; }
+
+/* Glassmorphism text surfaces */
+.hero-bottom>p,
+.projects .section-heading,
+.process-content>h2,
+.contact>p:not(.eyebrow) {
+  position:relative;
+  border:1px solid rgba(241,241,241,.16);
+  background:linear-gradient(135deg,rgba(241,241,241,.11),rgba(181,181,179,.035));
+  box-shadow:0 18px 55px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.12);
+  -webkit-backdrop-filter:blur(18px) saturate(125%);
+  backdrop-filter:blur(18px) saturate(125%);
+}
+.hero-bottom>p { width:min(430px,100%); padding:1.25rem 1.4rem; border-radius:18px; color:#d0d0ce; }
+.projects .section-heading { padding:2rem; border-radius:24px; }
+.process-content>h2 {
+  width:fit-content;
+  padding:1.25rem 1.5rem;
+  border-color:rgba(255,255,255,.35);
+  border-radius:20px;
+  background:linear-gradient(135deg,rgba(255,255,255,.3),rgba(241,241,241,.1));
+  box-shadow:0 18px 55px rgba(23,23,25,.12),inset 0 1px 0 rgba(255,255,255,.45);
+}
+.contact>p:not(.eyebrow) { padding:.85rem 1.2rem; border-radius:100px; color:#c8c8c6; }
+.service-list details:hover,.service-list details[open] {
+  background:rgba(23,23,25,.88);
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  box-shadow:0 18px 50px rgba(23,23,25,.14);
+}
+@media (max-width:800px) {
+  .projects .section-heading { padding:1.35rem; border-radius:18px; }
+  .process-content>h2 { padding:1rem; border-radius:16px; }
+  .contact>p:not(.eyebrow) { border-radius:18px; max-width:92%; }
+}
