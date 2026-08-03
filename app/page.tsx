@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const services = [
   {
@@ -33,6 +33,7 @@ const projects = [
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.classList.add("intro-running");
@@ -47,8 +48,23 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    const moveCursor = (event: MouseEvent) => {
+      if (cursor) cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+    };
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => entry.target.classList.toggle("is-visible", entry.isIntersecting));
+    }, { threshold: 0.12 });
+    const revealItems = document.querySelectorAll(".section-heading, .intro>*, .project-card, .service-list details, .process li, .contact>*");
+    revealItems.forEach((item) => { item.classList.add("reveal"); revealObserver.observe(item); });
+    window.addEventListener("mousemove", moveCursor, { passive: true });
+    return () => { window.removeEventListener("mousemove", moveCursor); revealObserver.disconnect(); };
+  }, []);
+
   return (
     <main>
+      <div className="custom-cursor" ref={cursorRef} aria-hidden="true"><span>ver</span></div>
       {showIntro && (
         <div className="intro-screen" role="status" aria-label="Apresentando samuel.dev">
           <div className="intro-word" aria-hidden="true">
@@ -93,6 +109,10 @@ export default function Home() {
         <div className="hero-index">Portfólio independente <span>•</span> Brasil, 2026</div>
       </section>
 
+      <div className="motion-ticker" aria-hidden="true">
+        <div>ESTRATÉGIA · DESIGN · DESENVOLVIMENTO · MOVIMENTO · ESTRATÉGIA · DESIGN · DESENVOLVIMENTO · MOVIMENTO ·</div>
+      </div>
+
       <section className="intro section" aria-labelledby="intro-title">
         <p className="section-label">Sobre o estúdio</p>
         <div>
@@ -136,12 +156,17 @@ export default function Home() {
         </div>
         <div className="service-list">
           {services.map((service) => (
-            <article key={service.title}>
-              <span>{service.number}</span>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-              <i>↗</i>
-            </article>
+            <details key={service.title} name="servicos">
+              <summary>
+                <span>{service.number}</span>
+                <h3>{service.title}</h3>
+                <i aria-hidden="true">+</i>
+              </summary>
+              <div className="service-detail">
+                <p>{service.text}</p>
+                <ul><li>Estratégia</li><li>Experiência</li><li>Desenvolvimento</li></ul>
+              </div>
+            </details>
           ))}
         </div>
       </section>
