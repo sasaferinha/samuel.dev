@@ -122,6 +122,10 @@ export default function Home() {
         <div className="hero-lines" aria-hidden="true">
           {Array.from({ length: 16 }).map((_, index) => <i key={index} />)}
         </div>
+        <div className="hero-metal" aria-hidden="true"><i /><i /><i /></div>
+        <div className="hero-waves" aria-hidden="true">
+          {Array.from({ length: 9 }).map((_, index) => <i key={index} />)}
+        </div>
 
         <div className="hero-content">
           <p className="eyebrow"><span /> Design & desenvolvimento web</p>
