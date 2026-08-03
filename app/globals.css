@@ -65,7 +65,7 @@ nav a { opacity:.7; transition:.25s; } nav a:hover { opacity:1; }
 .process { background:#d7ff45; display:grid; grid-template-columns:1fr 3fr; }.process .section-label { color:#4c551d; }.process h2 em { color:#57621e; }
 .process ol { list-style:none; padding:0; margin:5rem 0 0; border-top:1px solid rgba(10,10,9,.25); }.process li { display:grid; grid-template-columns:70px 1fr; padding:1.8rem 0; border-bottom:1px solid rgba(10,10,9,.25); }.process li>span { font-size:.65rem; }.process li div { display:grid; grid-template-columns:1fr 1fr; }.process strong { font-size:1.35rem; font-weight:520; }.process li p { margin:0; line-height:1.5; color:#45471f; font-size:.87rem; }
 .contact { min-height:85vh; background:var(--ink); color:var(--paper); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:7rem 2rem; position:relative; overflow:hidden; }
-.contact>* { position:relative; z-index:2; }.contact .eyebrow { margin-bottom:2.5rem; }.contact h2 { font-size:clamp(3.8rem,8vw,8rem); line-height:.84; letter-spacing:-.065em; margin:0; font-weight:520; }.contact h2 em { color:var(--warm); }.contact>p:not(.eyebrow) { color:#8d8a83; margin:2.5rem 0 2rem; }.contact>a { background:var(--accent); color:var(--ink); padding:1.1rem 1.4rem; border-radius:100px; font-size:.78rem; font-weight:650; }.contact>a span { margin-left:2rem; }
+.contact>* { position:relative; z-index:2; }.contact .eyebrow { margin-bottom:2.5rem; }.contact h2 { font-size:clamp(3.8rem,8vw,8rem); line-height:.84; letter-spacing:-.065em; margin:0 0 2.5rem; font-weight:520; }.contact h2 em { color:var(--warm); }.contact>a { background:var(--accent); color:var(--ink); padding:1.1rem 1.4rem; border-radius:100px; font-size:.78rem; font-weight:650; }.contact>a span { margin-left:2rem; }
 .contact-orbit { position:absolute; inset:auto; width:700px; height:700px; opacity:.17; }.contact-orbit i { position:absolute; inset:0; border:1px solid #ddd; border-radius:50%; }.contact-orbit i:nth-child(2){transform:rotate(60deg) scaleX(.45)}.contact-orbit i:nth-child(3){transform:rotate(-60deg) scaleX(.45)}
 footer { background:var(--ink); color:var(--paper); border-top:1px solid #262625; display:grid; grid-template-columns:1fr 1fr 1fr; align-items:center; padding:2rem 3.2vw; font-size:.7rem; color:#8e8b84; } footer .brand { color:var(--paper); } footer>p { text-align:center; } footer>div { display:flex; justify-content:flex-end; gap:2rem; }
 @media (max-width:800px) {
@@ -143,7 +143,7 @@ body,.services,.intro { background:#f1f1f1; color:#171719; }
 .hero,.intro-screen,.projects,.contact,footer { background-color:#171719; }
 .hero { background:radial-gradient(circle at 72% 42%,#4c4c4b 0,#242426 23%,#171719 58%,#111113 100%); }
 .hero h1,.hero h1 em,.contact,.projects,footer { color:#f1f1f1; }
-.hero-bottom>p,.eyebrow,.section-heading>p,.project-card>p,.contact>p:not(.eyebrow),footer { color:#b5b5b3; }
+.hero-bottom>p,.eyebrow,.section-heading>p,.project-card>p,footer { color:#b5b5b3; }
 .hero-lines i { border-color:#b5b5b3; }
 .process { color:#171719; background-color:#b5b5b3; background-image:radial-gradient(circle at 20% 20%,#f1f1f1 0,transparent 30%),radial-gradient(circle at 80% 80%,#8d8d8b 0,transparent 36%); }
 .process .section-label,.process li p,.process h2 em { color:#4c4c4b; }
@@ -157,8 +157,7 @@ body,.services,.intro { background:#f1f1f1; color:#171719; }
 /* Glassmorphism text surfaces */
 .hero-bottom>p,
 .projects .section-heading,
-.process-content>h2,
-.contact>p:not(.eyebrow) {
+.process-content>h2 {
   position:relative;
   border:1px solid rgba(241,241,241,.16);
   background:linear-gradient(135deg,rgba(241,241,241,.11),rgba(181,181,179,.035));
@@ -176,7 +175,6 @@ body,.services,.intro { background:#f1f1f1; color:#171719; }
   background:linear-gradient(135deg,rgba(255,255,255,.3),rgba(241,241,241,.1));
   box-shadow:0 18px 55px rgba(23,23,25,.12),inset 0 1px 0 rgba(255,255,255,.45);
 }
-.contact>p:not(.eyebrow) { padding:.85rem 1.2rem; border-radius:100px; color:#c8c8c6; }
 .service-list details:hover,.service-list details[open] {
   background:rgba(23,23,25,.88);
   -webkit-backdrop-filter:blur(16px);
@@ -186,7 +184,6 @@ body,.services,.intro { background:#f1f1f1; color:#171719; }
 @media (max-width:800px) {
   .projects .section-heading { padding:1.35rem; border-radius:18px; }
   .process-content>h2 { padding:1rem; border-radius:16px; }
-  .contact>p:not(.eyebrow) { border-radius:18px; max-width:92%; }
 }
 
 /* More life and depth */

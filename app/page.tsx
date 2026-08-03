@@ -230,7 +230,6 @@ export default function Home() {
         <div className="contact-orbit" aria-hidden="true"><i /><i /><i /></div>
         <p className="eyebrow"><span /> Seu próximo site começa aqui</p>
         <h2>Vamos criar algo<br /><em>único juntos?</em></h2>
-        <p>Conte um pouco sobre sua ideia e receba uma proposta personalizada.</p>
         <a href="mailto:contato@samuelstudio.com.br">Quero tirar minha ideia do papel <span>↗</span></a>
       </section>
 
