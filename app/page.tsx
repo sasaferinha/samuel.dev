@@ -68,7 +68,7 @@ export default function Home() {
       {showIntro && (
         <div className="intro-screen" role="status" aria-label="Apresentando samuel.dev">
           <div className="intro-word" aria-hidden="true">
-            {["s", "a", "m", "u", "e", "l", ".", "d", "e", "v"].map((letter, index) => (
+            {["S", "A", "M", "U", "E", "L", ".", "D", "E", "V"].map((letter, index) => (
               <span key={`${letter}-${index}`}>{letter}</span>
             ))}
           </div>
@@ -78,8 +78,7 @@ export default function Home() {
       <section className="hero" id="inicio">
         <header className="site-header">
           <a className="brand" href="#inicio" aria-label="Início">
-            <span className="brand-mark">S</span>
-            <span>samuel.dev</span>
+            <span>SAMUEL.DEV</span>
           </a>
           <nav aria-label="Navegação principal">
             <a href="#trabalhos">Trabalhos</a>
@@ -94,7 +93,6 @@ export default function Home() {
 
         <div className="hero-sculpture" aria-hidden="true">
           <i /><i /><i />
-          <span>s</span>
         </div>
         <div className="hero-ghost" aria-hidden="true">DESIGN / DEVELOPMENT</div>
 
@@ -193,7 +191,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand" href="#inicio"><span className="brand-mark">S</span><span>samuel.dev</span></a>
+        <a className="brand" href="#inicio"><span>SAMUEL.DEV</span></a>
         <p>Sites que fazem sua empresa ser vista e lembrada.</p>
         <div><a href="#inicio">Voltar ao topo ↑</a><span>© 2026</span></div>
       </footer>
