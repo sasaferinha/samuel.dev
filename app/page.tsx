@@ -91,13 +91,11 @@ export default function Home() {
           {Array.from({ length: 16 }).map((_, index) => <i key={index} />)}
         </div>
 
-        <div className="hero-ghost" aria-hidden="true">DESIGN / DEVELOPMENT</div>
-
         <div className="hero-content">
           <p className="eyebrow"><span /> Design & desenvolvimento web</p>
           <h1 className="hero-statement">
-            <span>Design <i>/</i></span>
-            <span>que move <i>/</i></span>
+            <span>Sites <i>/</i></span>
+            <span>que movem <i>/</i></span>
             <span><em>negócios.</em></span>
           </h1>
           <div className="hero-bottom">
