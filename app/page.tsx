@@ -106,10 +106,6 @@ export default function Home() {
         <div className="hero-index">Portfólio independente <span>•</span> Brasil, 2026</div>
       </section>
 
-      <div className="motion-ticker" aria-hidden="true">
-        <div>ESTRATÉGIA · DESIGN · DESENVOLVIMENTO · MOVIMENTO · ESTRATÉGIA · DESIGN · DESENVOLVIMENTO · MOVIMENTO ·</div>
-      </div>
-
       <section className="intro section" aria-labelledby="intro-title">
         <p className="section-label">Sobre o estúdio</p>
         <div>
