@@ -31,6 +31,13 @@ const projects = [
   { tag: "Gastronomia · Landing page", name: "Casa Alba", className: "project-blue" },
 ];
 
+const faqs = [
+  { question: "Quanto custa criar um site?", answer: "O investimento depende do tamanho e das funcionalidades. Depois de uma conversa inicial, você recebe uma proposta clara com escopo, prazo e valor." },
+  { question: "Como funciona o desenvolvimento?", answer: "Começamos pela estratégia, seguimos para o design e então construímos e testamos o site. Você acompanha cada etapa e aprova as decisões importantes." },
+  { question: "Você também cuida do site depois de publicado?", answer: "Sim. Posso continuar com manutenção, atualizações, novas páginas e melhorias de desempenho conforme sua empresa evolui." },
+  { question: "Posso modernizar um site que já existe?", answer: "Sim. Primeiro analiso o que pode ser aproveitado e depois indico se vale mais uma evolução visual, uma reconstrução parcial ou um novo projeto." },
+];
+
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
 
@@ -51,7 +58,7 @@ export default function Home() {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => entry.target.classList.toggle("is-visible", entry.isIntersecting));
     }, { threshold: 0.12 });
-    const revealItems = document.querySelectorAll(".section-heading, .intro>*, .project-card, .service-list details, .process li, .contact>*");
+    const revealItems = document.querySelectorAll(".section-heading, .intro>*, .project-card, .service-list details, .process li, .faq-list details, .contact>*");
     revealItems.forEach((item) => { item.classList.add("reveal"); revealObserver.observe(item); });
     return () => { revealObserver.disconnect(); };
   }, []);
@@ -88,7 +95,11 @@ export default function Home() {
 
         <div className="hero-content">
           <p className="eyebrow"><span /> Design & desenvolvimento web</p>
-          <h1>Design que<br /><em>move negócios.</em></h1>
+          <h1 className="hero-statement">
+            <span>Design <i>/</i></span>
+            <span>que move <i>/</i></span>
+            <span><em>negócios.</em></span>
+          </h1>
           <div className="hero-bottom">
             <p>Você merece um site próprio e único. Crio experiências digitais que traduzem a essência da sua empresa e ajudam o seu negócio a crescer.</p>
             <a className="circle-link" href="#trabalhos" aria-label="Ver meus trabalhos"><span>↓</span> Explorar</a>
@@ -168,6 +179,21 @@ export default function Home() {
             <li><span>03</span><div><strong>Construção</strong><p>Desenvolvo o site com desempenho, responsividade e atenção aos detalhes.</p></div></li>
             <li><span>04</span><div><strong>Lançamento</strong><p>Publicamos, revisamos e deixamos tudo pronto para sua empresa crescer.</p></div></li>
           </ol>
+        </div>
+      </section>
+
+      <section className="faq section" aria-labelledby="faq-title">
+        <div className="faq-heading">
+          <p className="section-label">Perguntas frequentes</p>
+          <h2 id="faq-title">Tudo claro<br /><em>antes de começar.</em></h2>
+        </div>
+        <div className="faq-list">
+          {faqs.map((faq, index) => (
+            <details key={faq.question} name="faq">
+              <summary><span>0{index + 1}</span><strong>{faq.question}</strong><i aria-hidden="true">+</i></summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
         </div>
       </section>
 
