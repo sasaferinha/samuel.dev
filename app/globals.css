@@ -76,9 +76,10 @@ footer { background:var(--ink); color:var(--paper); border-top:1px solid #262625
 /* Cinematic opening */
 .intro-running { overflow:hidden; }
 .intro-screen { position:fixed; inset:0; z-index:9999; display:grid; place-items:center; background:#000; color:#fff; animation:intro-exit 5.4s cubic-bezier(.76,0,.24,1) forwards; }
-.intro-word { display:flex; align-items:center; justify-content:center; overflow:visible; font-size:clamp(3.4rem,8.5vw,8.16rem); font-weight:620; letter-spacing:-.075em; line-height:1; text-shadow:0 0 34px rgba(255,255,255,.12); }
+.intro-word { display:flex; align-items:center; justify-content:center; overflow:visible; color:#b9b9b7; font-size:clamp(3.4rem,8.5vw,8.16rem); font-weight:620; letter-spacing:-.075em; line-height:1; text-shadow:0 0 28px rgba(185,185,183,.1); }
 .intro-word span { display:inline-block; min-width:.26em; opacity:0; animation:letter-arrive 2.4s cubic-bezier(.22,.78,.2,1) forwards; }
 .intro-word span:nth-child(1){--x:-42vw;--y:-24vh;--r:-32deg;animation-delay:.05s}.intro-word span:nth-child(2){--x:18vw;--y:-45vh;--r:24deg;animation-delay:.12s}.intro-word span:nth-child(3){--x:-30vw;--y:38vh;--r:42deg;animation-delay:.19s}.intro-word span:nth-child(4){--x:44vw;--y:18vh;--r:-28deg;animation-delay:.26s}.intro-word span:nth-child(5){--x:-8vw;--y:-48vh;--r:18deg;animation-delay:.33s}.intro-word span:nth-child(6){--x:35vw;--y:-32vh;--r:-46deg;animation-delay:.4s}.intro-word span:nth-child(7){--x:-48vw;--y:4vh;--r:60deg;animation-delay:.47s}.intro-word span:nth-child(8){--x:20vw;--y:45vh;--r:-32deg;animation-delay:.54s}.intro-word span:nth-child(9){--x:-34vw;--y:-18vh;--r:38deg;animation-delay:.61s}.intro-word span:nth-child(10){--x:46vw;--y:34vh;--r:-26deg;animation-delay:.68s}
+.intro-word span:nth-child(7) { margin-left:.16em; }
 .intro-progress { position:absolute; bottom:2rem; width:120px; height:1px; background:#222; overflow:hidden; }.intro-progress i { display:block; height:100%; background:#fff; transform-origin:left; animation:intro-load 5.1s linear forwards; }
 
 /* Type reduced by roughly 60% */
