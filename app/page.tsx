@@ -18,6 +18,11 @@ const services = [
     title: "Lojas virtuais",
     text: "Experiências de compra simples e bonitas, pensadas para valorizar seus produtos e vender mais.",
   },
+  {
+    number: "04",
+    title: "Evolução contínua",
+    text: "Manutenção, novas páginas e melhorias para seu site continuar rápido, atual e relevante.",
+  },
 ];
 
 const projects = [
@@ -71,11 +76,17 @@ export default function Home() {
           {Array.from({ length: 16 }).map((_, index) => <i key={index} />)}
         </div>
 
+        <div className="hero-sculpture" aria-hidden="true">
+          <i /><i /><i />
+          <span>s</span>
+        </div>
+        <div className="hero-ghost" aria-hidden="true">DESIGN / DEVELOPMENT</div>
+
         <div className="hero-content">
           <p className="eyebrow"><span /> Design & desenvolvimento web</p>
-          <h1>Você merece um site<br />próprio e <em>único!</em></h1>
+          <h1>Design que<br /><em>move negócios.</em></h1>
           <div className="hero-bottom">
-            <p>Crio experiências digitais que traduzem a essência da sua empresa e ajudam o seu negócio a crescer.</p>
+            <p>Você merece um site próprio e único. Crio experiências digitais que traduzem a essência da sua empresa e ajudam o seu negócio a crescer.</p>
             <a className="circle-link" href="#trabalhos" aria-label="Ver meus trabalhos"><span>↓</span> Explorar</a>
           </div>
         </div>
