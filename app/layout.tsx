@@ -13,15 +13,15 @@ export async function generateMetadata(): Promise<Metadata> {
   const image = new URL("/og.png", `${protocol}://${host}`).toString();
 
   return {
-    title: "Samuel Studio — Sites únicos para empresas",
+    title: "samuel.dev — Sites únicos para empresas",
     description: "Design e desenvolvimento de sites personalizados para empresas que querem ser vistas e lembradas.",
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
     openGraph: {
-      title: "Samuel Studio — Sites únicos para empresas",
+      title: "samuel.dev — Sites únicos para empresas",
       description: "Você merece um site próprio e único!",
       type: "website",
       locale: "pt_BR",
-      images: [{ url: image, width: 1200, height: 630, alt: "Samuel Studio — Você merece um site próprio e único!" }],
+      images: [{ url: image, width: 1200, height: 630, alt: "samuel.dev — Você merece um site próprio e único!" }],
     },
     twitter: { card: "summary_large_image", images: [image] },
   };

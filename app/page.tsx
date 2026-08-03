@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const services = [
   {
     number: "01",
@@ -23,13 +27,38 @@ const projects = [
 ];
 
 export default function Home() {
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    document.body.classList.add("intro-running");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const timer = window.setTimeout(() => {
+      setShowIntro(false);
+      document.body.classList.remove("intro-running");
+    }, reducedMotion ? 600 : 4000);
+    return () => {
+      window.clearTimeout(timer);
+      document.body.classList.remove("intro-running");
+    };
+  }, []);
+
   return (
     <main>
+      {showIntro && (
+        <div className="intro-screen" role="status" aria-label="Apresentando samuel.dev">
+          <div className="intro-word" aria-hidden="true">
+            {["s", "a", "m", "u", "e", "l", ".", "d", "e", "v"].map((letter, index) => (
+              <span key={`${letter}-${index}`}>{letter}</span>
+            ))}
+          </div>
+          <div className="intro-progress" aria-hidden="true"><i /></div>
+        </div>
+      )}
       <section className="hero" id="inicio">
         <header className="site-header">
           <a className="brand" href="#inicio" aria-label="Início">
             <span className="brand-mark">S</span>
-            <span>Samuel Studio</span>
+            <span>samuel.dev</span>
           </a>
           <nav aria-label="Navegação principal">
             <a href="#trabalhos">Trabalhos</a>
@@ -128,7 +157,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand" href="#inicio"><span className="brand-mark">S</span><span>Samuel Studio</span></a>
+        <a className="brand" href="#inicio"><span className="brand-mark">S</span><span>samuel.dev</span></a>
         <p>Sites que fazem sua empresa ser vista e lembrada.</p>
         <div><a href="#inicio">Voltar ao topo ↑</a><span>© 2026</span></div>
       </footer>
