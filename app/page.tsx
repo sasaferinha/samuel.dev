@@ -100,9 +100,8 @@ export default function Home() {
       {showIntro && (
         <div className="intro-screen" role="status" aria-label="Apresentando samuel.dev">
           <div className="intro-word" aria-hidden="true">
-            {["S", "A", "M", "U", "E", "L", ".", "D", "E", "V"].map((letter, index) => (
-              <span key={`${letter}-${index}`}>{letter}</span>
-            ))}
+            <span className="intro-initial">S</span>
+            <span className="intro-rest">AMUEL<span className="intro-dot">.</span>DEV</span>
           </div>
           <div className="intro-progress" aria-hidden="true"><i /></div>
         </div>
