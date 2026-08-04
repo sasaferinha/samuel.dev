@@ -129,9 +129,8 @@ export default function Home() {
         <div className="hero-content">
           <p className="eyebrow"><span /> Design & desenvolvimento web</p>
           <h1 className="hero-statement">
-            <span>Sites</span>
-            <span>que movem</span>
-            <span><em>negócios.</em></span>
+            <span className="hero-line-primary">Sites que</span>
+            <span className="hero-line-accent"><em>movem negócios.</em></span>
           </h1>
           <div className="hero-bottom">
             <p>Você merece um site próprio e único. Crio experiências digitais que traduzem a essência da sua empresa e ajudam o seu negócio a crescer.</p>

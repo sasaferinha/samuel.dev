@@ -371,3 +371,30 @@ nav a:not(.nav-cta):hover::after { transform:scaleX(1); transform-origin:left; }
 .service-detail li { border-color:#55585b; color:#bfc1c2; background:rgba(255,255,255,.025); }
 @keyframes services-metal-sweep { 0%,35%{transform:translateX(-38%) rotate(6deg)} 70%,100%{transform:translateX(38%) rotate(6deg)} }
 @media (prefers-reduced-motion:reduce) { .services::after { animation:none!important; } }
+
+/* Refined animated hero statement */
+.hero { background-size:145% 145%; animation:hero-atmosphere 14s ease-in-out infinite alternate; }
+.hero-statement { gap:.04em; font-size:clamp(2.35rem,4.7vw,5.2rem)!important; line-height:.9!important; letter-spacing:-.07em!important; }
+.hero-statement>span { position:relative; overflow:hidden; padding-right:.08em; }
+.hero-line-primary { color:#f1f1ef; font-weight:560; animation:headline-drift-a 6s ease-in-out infinite alternate; }
+.hero-line-accent { animation:headline-drift-b 7.5s ease-in-out infinite alternate; }
+.hero-line-accent em { color:transparent!important; background:linear-gradient(100deg,#777a7d 0,#f1f1ef 35%,#85888b 55%,#d6d7d6 76%,#65686b 100%); background-size:180% 100%; -webkit-background-clip:text; background-clip:text; font-family:var(--font-sans),Arial,sans-serif!important; font-style:normal; animation:headline-metal 5s ease-in-out infinite alternate; }
+.hero-statement::after { content:""; position:absolute; left:0; bottom:-.22em; width:42%; height:1px; background:linear-gradient(90deg,#d7d8d7,transparent); transform-origin:left; animation:headline-line 3.2s ease-in-out infinite; }
+.hero-waves i { animation:hero-wave-motion 5.5s ease-in-out infinite alternate; }
+.hero-waves i:nth-child(2n) { animation-duration:7s; animation-direction:alternate-reverse; }
+.hero-waves i:nth-child(3n) { animation-duration:9s; }
+.hero-metal::after { content:""; position:absolute; width:5px; height:5px; border-radius:50%; right:18%; top:16%; background:#d7d8d7; box-shadow:-8vw 11vh 0 -1px rgba(215,216,215,.65),6vw 28vh 0 -1px rgba(215,216,215,.45),-17vw 38vh 0 -1px rgba(215,216,215,.38); animation:metal-glints 4s ease-in-out infinite; }
+@keyframes hero-atmosphere { from{background-position:28% 45%} to{background-position:72% 56%} }
+@keyframes headline-drift-a { from{transform:translateX(0)} to{transform:translateX(.12em)} }
+@keyframes headline-drift-b { from{transform:translateX(.08em)} to{transform:translateX(0)} }
+@keyframes headline-metal { from{background-position:0% 50%} to{background-position:100% 50%} }
+@keyframes headline-line { 0%,100%{transform:scaleX(.35);opacity:.35} 50%{transform:scaleX(1);opacity:1} }
+@keyframes hero-wave-motion { from{transform:translateX(-2%) scaleX(.98);border-radius:46%} to{transform:translateX(3%) scaleX(1.04);border-radius:54%} }
+@keyframes metal-glints { 0%,100%{opacity:.2;transform:scale(.7)} 50%{opacity:1;transform:scale(1.25)} }
+@media (max-width:800px) {
+  .hero-statement { font-size:clamp(2.05rem,9.2vw,3.15rem)!important; line-height:.92!important; }
+  .hero-statement::after { width:58%; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero,.hero-line-primary,.hero-line-accent,.hero-line-accent em,.hero-statement::after,.hero-waves i,.hero-metal::after { animation:none!important; }
+}
