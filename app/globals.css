@@ -338,3 +338,36 @@ nav a:not(.nav-cta):hover::after { transform:scaleX(1); transform-origin:left; }
   .hero-metal,.hero-waves { translate:none!important; }
   .hero-metal i { animation:none!important; }
 }
+
+/* Metallic black Services section */
+.services {
+  background:
+    radial-gradient(circle at 18% 16%,rgba(105,108,112,.2),transparent 25%),
+    radial-gradient(circle at 82% 72%,rgba(64,66,69,.22),transparent 28%),
+    linear-gradient(132deg,#050506 0,#1b1c1e 38%,#080809 66%,#202124 100%);
+  color:#ededeb;
+}
+.services::before { width:50rem; height:50rem; left:auto; right:-20rem; top:-22rem; bottom:auto; background:radial-gradient(circle,rgba(203,205,207,.14),rgba(20,21,23,.04) 42%,transparent 70%); }
+.services::after { content:""; position:absolute; z-index:0; inset:-35%; pointer-events:none; background:linear-gradient(112deg,transparent 42%,rgba(255,255,255,.055) 49%,rgba(255,255,255,.015) 53%,transparent 60%); transform:translateX(-38%) rotate(6deg); animation:services-metal-sweep 10s ease-in-out infinite; }
+.services-heading { color:#ededeb; }
+.services-heading::before,.services-heading::after { background:linear-gradient(90deg,transparent,rgba(218,220,222,.42),transparent); }
+.services-heading h2 {
+  color:transparent;
+  background:linear-gradient(105deg,#74777a 0,#e1e2e2 26%,#696c70 44%,#f0f0ee 57%,#55585b 76%,#c7c9ca 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  filter:drop-shadow(0 16px 22px rgba(0,0,0,.7));
+  text-shadow:none;
+}
+.services-heading h2::after { color:transparent; -webkit-text-stroke:1px rgba(225,226,226,.12); transform:translate(.045em,.085em); }
+.service-list { border-top-color:rgba(222,224,225,.23); }
+.service-list details { border-bottom-color:rgba(222,224,225,.2); }
+.service-list summary span { color:#8f9295; }
+.service-list summary h3 { color:#e4e4e2; }
+.service-list summary i { border-color:#696c70; color:#d8d9d8; background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(0,0,0,.3)); box-shadow:inset 0 1px 0 rgba(255,255,255,.1); }
+.service-list details:hover,.service-list details[open] { background:linear-gradient(105deg,rgba(255,255,255,.035),rgba(91,94,98,.2),rgba(0,0,0,.25)); color:#fff; box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 22px 65px rgba(0,0,0,.32); }
+.service-list details[open] summary i { background:linear-gradient(145deg,#d8d9d8,#74777a); color:#0a0a0b; border-color:#bfc1c2; }
+.service-detail p { color:#aaaeb0; }
+.service-detail li { border-color:#55585b; color:#bfc1c2; background:rgba(255,255,255,.025); }
+@keyframes services-metal-sweep { 0%,35%{transform:translateX(-38%) rotate(6deg)} 70%,100%{transform:translateX(38%) rotate(6deg)} }
+@media (prefers-reduced-motion:reduce) { .services::after { animation:none!important; } }
