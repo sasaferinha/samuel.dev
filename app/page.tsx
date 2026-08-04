@@ -132,10 +132,6 @@ export default function Home() {
             <span className="hero-line-primary">Sites que</span>
             <span className="hero-line-accent"><em>movem negócios.</em></span>
           </h1>
-          <div className="hero-bottom">
-            <p>Você merece um site próprio e único. Crio experiências digitais que traduzem a essência da sua empresa e ajudam o seu negócio a crescer.</p>
-            <a className="circle-link" href="#trabalhos" aria-label="Ver meus trabalhos"><span>↓</span> Explorar</a>
-          </div>
         </div>
         <div className="hero-index">Portfólio independente <span>•</span> Brasil, 2026</div>
       </section>
