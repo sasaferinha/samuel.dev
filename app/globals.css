@@ -81,6 +81,9 @@ footer { background:var(--ink); color:var(--paper); border-top:1px solid #262625
 .intro-rest { display:inline-block; max-width:0; overflow:hidden; white-space:nowrap; opacity:0; animation:intro-rest 1.9s cubic-bezier(.76,0,.24,1) 1.15s forwards; }
 .intro-dot { display:inline-block; margin-left:.11em; }
 .intro-progress { position:absolute; bottom:2rem; width:120px; height:1px; background:#222; overflow:hidden; }.intro-progress i { display:block; height:100%; background:#fff; transform-origin:left; animation:intro-load 5.1s linear forwards; }
+.intro-counter { position:absolute; right:clamp(1.25rem,3.2vw,3.2rem); bottom:clamp(1.25rem,2.3vw,2.3rem); display:flex; align-items:flex-end; gap:.8rem; color:#d0d0ce; font-variant-numeric:tabular-nums; }
+.intro-counter span { min-width:4ch; font-size:clamp(1.35rem,2.4vw,2.3rem); line-height:.8; letter-spacing:-.06em; font-weight:500; text-align:right; }
+.intro-counter small { color:#6f6f6d; font-size:.55rem; line-height:1; letter-spacing:.18em; text-transform:uppercase; }
 
 /* Type reduced by roughly 60% */
 .hero h1 { font-size:clamp(2.2rem,4.25vw,4.5rem); line-height:.94; letter-spacing:-.06em; }
@@ -137,7 +140,7 @@ footer { background:var(--ink); color:var(--paper); border-top:1px solid #262625
 
 @media (max-width:800px){.hero h1{font-size:clamp(2.25rem,10vw,3.4rem);line-height:.92}.intro-word{font-size:clamp(2.2rem,10vw,3.8rem)}.intro h2,.section-heading h2,.process h2{font-size:clamp(1.75rem,8vw,2.5rem)}.contact h2{font-size:clamp(2.1rem,10vw,3.2rem)}.hero-content{padding-left:0;z-index:3}.hero-bottom>p{font-size:.76rem}}
 @media (max-width:800px){.service-list summary{grid-template-columns:45px 1fr 40px;gap:1rem}.service-list summary h3{font-size:1.22rem}.service-detail{grid-template-columns:1fr;padding:0 1rem 1.8rem 45px;gap:1rem}}
-@media (prefers-reduced-motion:reduce){.intro-screen{animation-duration:.6s}.intro-initial,.intro-rest{opacity:1;max-width:none;transform:none;animation:none}.hero-content,.site-header,.hero-index{animation:none}.hero-lines,.hero-lines i,.circle-link,.mock-window,.project-arrow,.service-list i,.contact-orbit,.contact-orbit i,.process,.project-visual::after{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.intro-screen{animation-duration:.6s}.intro-initial,.intro-rest{opacity:1;max-width:none;transform:none;animation:none}.intro-progress i{animation-duration:.6s}.hero-content,.site-header,.hero-index{animation:none}.hero-lines,.hero-lines i,.circle-link,.mock-window,.project-arrow,.service-list i,.contact-orbit,.contact-orbit i,.process,.project-visual::after{animation:none!important}}
 
 /* Unified monochrome palette */
 :root { --ink:#171719; --paper:#f1f1f1; --warm:#b5b5b3; --line:rgba(23,23,25,.18); --accent:#b5b5b3; }

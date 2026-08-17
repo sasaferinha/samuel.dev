@@ -40,16 +40,30 @@ const faqs = [
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
+  const [loadProgress, setLoadProgress] = useState(0);
 
   useEffect(() => {
     document.body.classList.add("intro-running");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const duration = reducedMotion ? 600 : 5400;
+    const startedAt = performance.now();
+    let progressFrame = 0;
+
+    const updateProgress = (now: number) => {
+      const elapsed = Math.min(1, (now - startedAt) / duration);
+      setLoadProgress(Math.round(elapsed * 100));
+      if (elapsed < 1) progressFrame = window.requestAnimationFrame(updateProgress);
+    };
+
+    progressFrame = window.requestAnimationFrame(updateProgress);
     const timer = window.setTimeout(() => {
+      setLoadProgress(100);
       setShowIntro(false);
       document.body.classList.remove("intro-running");
-    }, reducedMotion ? 600 : 5400);
+    }, duration);
     return () => {
       window.clearTimeout(timer);
+      window.cancelAnimationFrame(progressFrame);
       document.body.classList.remove("intro-running");
     };
   }, []);
@@ -102,6 +116,10 @@ export default function Home() {
           <div className="intro-word" aria-hidden="true">
             <span className="intro-initial">S</span>
             <span className="intro-rest">AMUEL<span className="intro-dot">.</span>DEV</span>
+          </div>
+          <div className="intro-counter" aria-live="polite">
+            <span>{String(loadProgress).padStart(2, "0")}%</span>
+            <small>Carregando</small>
           </div>
           <div className="intro-progress" aria-hidden="true"><i /></div>
         </div>
