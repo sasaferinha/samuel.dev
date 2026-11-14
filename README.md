@@ -1,8 +1,55 @@
-# vinext-starter
+# samuel.dev
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+Site de apresentação de serviços de design e desenvolvimento web, com projetos selecionados, serviços, etapas do trabalho, perguntas frequentes e contato.
+
+## O que há no site
+
+- Apresentação da marca com animação de entrada.
+- Galeria de projetos.
+- Serviços organizados em seções expansíveis.
+- Processo de trabalho e perguntas frequentes.
+- Contato por e-mail e navegação entre as seções da página.
+- Tratamento da preferência de movimento reduzido na introdução e nos efeitos de rolagem.
+
+## Stack
+
+React, TypeScript e APIs do Next.js, com desenvolvimento e build via [vinext](https://github.com/cloudflare/vinext). A configuração do projeto inclui suporte opcional a Cloudflare D1 e Drizzle.
+
+## Onde editar
+
+| Arquivo | Conteúdo |
+| --- | --- |
+| [`app/page.tsx`](app/page.tsx) | Textos, serviços, projetos, perguntas frequentes, contato e comportamento da página. |
+| [`app/globals.css`](app/globals.css) | Estilos, layout e animações. |
+| [`app/layout.tsx`](app/layout.tsx) | Idioma, fontes, título, descrição e metadados sociais. |
+| [`public/`](public/) | Arquivos estáticos, como o favicon. |
+| [`package.json`](package.json) | Dependências e comandos do projeto. |
+
+## Desenvolvimento local
+
+Use Node.js **22.13.0 ou superior** e um terminal compatível com os scripts do projeto.
+
+```bash
+git clone https://github.com/sasaferinha/samuel.dev.git
+cd samuel.dev
+npm ci
+npm run dev
+```
+
+Abra o endereço exibido pelo servidor no terminal. Se já tiver clonado o projeto, execute os comandos de instalação e desenvolvimento dentro da pasta existente.
+
+Comandos disponíveis para conferir uma alteração:
+
+```bash
+npm run lint
+npm run build
+```
+
+O script `npm test` ainda contém verificações do esqueleto original do starter; elas precisam ser adaptadas ao portfólio atual antes de servirem como validação desta página.
+
+## Referência da infraestrutura
+
+As seções abaixo preservam as instruções do starter usado como base para o projeto.
 
 ## Prerequisites
 
